@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="section-header">
+    <div class="section-title">Public Dashboard</div>
+</div>
+
+<div class="grid grid-3">
+    <div class="card">
+        <div class="card-title">Total Registered Vehicles</div>
+        <div class="card-value">{{ total_vehicles }}</div>
+        <div class="card-footer">Including all vehicle types</div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Traffic Violations Recorded</div>
+        <div class="card-value">{{ total_violations }}</div>
+        <div class="card-footer">Detected till now</div>
+    </div>
+</div>
+{% endblock %}

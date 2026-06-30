@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="table-wrapper">
+    <div class="table-top">
+        <h3>Registered Vehicles</h3>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Owner</th>
+                <th>Plate</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vehicle in vehicles %}
+            <tr>
+                <td>{{ vehicle.owner_name }}</td>
+                <td>{{ vehicle.vehicle_number }}</td>
+                <td>{{ vehicle.vehicle_type }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

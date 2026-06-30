@@ -1,0 +1,7 @@
+﻿__pycache__/
+*.pyc
+evidence/
+evidence_images/
+violations_log.csv
+violations_fallback.csv
+.env

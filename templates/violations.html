@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="table-wrapper">
+    <div class="table-top">
+        <h3>Violation History</h3>
+        <div class="table-search">
+            <input type="search" placeholder="Search plate...">
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Plate</th>
+                <th>Time</th>
+                <th>Type</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for v in violations %}
+            <tr>
+                <td>{{ v.plate }}</td>
+                <td>{{ v.time }}</td>
+                <td><span class="badge badge-red">{{ v.type }}</span></td>
+                <td>
+                    <img src="{{ url_for('static', filename='evidence_images/' ~ v.image) }}"
+                         class="evidence-img">
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

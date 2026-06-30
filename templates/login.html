@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login-bg">
+    <div class="auth-wrapper">
+        <div class="auth-card glass-effect">
+            <div class="auth-title">Welcome Back!</div>
+            <div class="auth-subtitle">Login to continue</div>
+            <form action="{{ url_for('login') }}" method="POST">
+                <input type="text" name="username" placeholder="Enter username" required>
+                <input type="password" name="password" placeholder="Enter password" required>
+                {% if error %}
+                    <div class="auth-error">{{ error }}</div>
+                {% endif %}
+                <button type="submit" class="btn" style="width:100%; margin-top:10px;">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

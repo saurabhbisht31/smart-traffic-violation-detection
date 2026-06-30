@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="section-header">
+    <div class="section-title">Admin Dashboard</div>
+</div>
+
+<div class="grid grid-3">
+    <div class="card">
+        <div class="card-title">Total Violations</div>
+        <div class="card-value">{{ total_violations }}</div>
+        <div class="card-footer">Logged in the system</div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Live Detection</div>
+        <div class="card-value">Realtime</div>
+        <div class="card-footer"><a href="{{ url_for('video_feed') }}" class="btn-green">Start Stream</a></div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Registered Vehicles</div>
+        <div class="card-value">{{ total_vehicles }}</div>
+        <div class="card-footer">View details</div>
+    </div>
+</div>
+{% endblock %}
